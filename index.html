@@ -14,8 +14,8 @@
   <script>
     document.getElementById("assignBtn").addEventListener("click", async () => {
       // API aufrufen
-      const response = await fetch("/api/assign");
-      const data = await response.json();
+const response = await fetch("/api/assign", { method: "GET" });
+const data = await response.json();
 
       let html = "<h2>Zuweisungen:</h2><ul>";
       for(const [giver, receiver] of Object.entries(data)){
@@ -26,4 +26,5 @@
     });
   </script>
 </body>
+
 </html>
